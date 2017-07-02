@@ -3,6 +3,6 @@ project(snake)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES game.c gameSetup.c inputHandler.c gameLogic.c)
-set(HEADER_FILES game.h gameSetup.h inputHandler.h gameLogic.h)
+set(SOURCE_FILES src/game.c src/gameSetup.c src/inputHandler.c src/gameLogic.c)
+set(HEADER_FILES include/game.h include/gameSetup.h include/inputHandler.h include/gameLogic.h)
 add_executable(snake ${SOURCE_FILES})

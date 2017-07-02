@@ -1,6 +1,11 @@
-#include <stdbool.h>
+/**
+ * @file gameLogic.c
+ * @brief The file contains the implementation/definition of the function responsible
+ * for logic of the snake's movements and checks for the game over condition.
+ */
 #include <stdlib.h>
-#include "game.h"
+#include <stdbool.h>
+#include "../include/game.h"
 
 void logic() {
     int previousX = snake[0][0];
