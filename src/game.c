@@ -30,13 +30,23 @@ bool gameOver, snakeBodyDetected;
 int width,height,currentX, currentY,foodX, foodY,score, currentSnakeLength;
 int snake[100][2];
 enum State state;
-
+/**
+ * A function which sets the console cursor's visibility to false "invisible".
+ */
+void hideCursor() {
+    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO info;
+    info.dwSize = 100;
+    info.bVisible = FALSE;
+    SetConsoleCursorInfo(consoleHandle, &info);
+}
 /**
  * A function which controls the main logic of the game and initializes the grid's
  * width and height as well as the seed of the random number generator.
  * @return 0 - indicating normal termination else abnormal abortion to the program.
  */
 int main() {
+    hideCursor();
     srand(time(NULL));
     width = 60;
     height = 20;
@@ -47,7 +57,7 @@ int main() {
             drawGrid();
             handleInput();
             logic();
-            Sleep(25);
+            Sleep(7);
         }
         printf(ANSI_COLOR_RED"\nGame Over!"ANSI_COLOR_CYAN" Your Score: %d\n"
                        ANSI_COLOR_RED"Press (N) for new game anything else will exit the game."ANSI_COLOR_RESET,score);

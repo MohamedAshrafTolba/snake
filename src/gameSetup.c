@@ -40,6 +40,7 @@ void initialize() {
 }
 void drawGrid() {
     system("cls");
+    fflush(stdin);
     printf (ANSI_COLOR_RED"%28sSnake!\n"ANSI_COLOR_RESET,"");
     printf (ANSI_COLOR_CYAN "%23sCurrent Score: %d\n"ANSI_COLOR_RESET,"",score);
     printf(ANSI_COLOR_YELLOW"%c"ANSI_COLOR_RESET ,218);
